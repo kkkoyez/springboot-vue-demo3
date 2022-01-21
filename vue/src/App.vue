@@ -1,37 +1,24 @@
 <template>
-
   <div>
+    <router-view />
 
-    <!--    头部-->
-    <Header />
 
-    <!--    主题-->
-    <div style="display: flex">
-      <!--      侧边栏-->
-      <Aside />
-      <!--      内容区域-->
-      <router-view style="flex: 1"/>
-    </div>
   </div>
 
 </template>
 
 <style>
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 </style>
 
 <script>
-import Header from "./components/Header";
-import Aside from "./components/Aside";
-
-
 export default {
-  name: "Layout",
-  components:{
-    Header,
-    Aside
+  name: "App",
 
-  },
 
 }
 </script>
