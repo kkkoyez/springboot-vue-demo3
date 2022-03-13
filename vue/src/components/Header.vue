@@ -6,12 +6,15 @@
         <div style="width: 100px">
             <el-dropdown>
               <span class="el-dropdown-link">
-                琑儿<i class="el-icon-arrow-down el-icon--right"></i>
+                  {{user.username}}
+
+<!--           {{ user.nickName }}-->
+          <i class="el-icon-arrow-down el-icon--right"></i>
               </span>
                 <template #dropdown>
                     <el-dropdown-menu>
-                        <el-dropdown-item>个人信息</el-dropdown-item>
-                        <el-dropdown-item>退出系统</el-dropdown-item>
+                      <el-dropdown-item @click="$router.push('/person')">个人信息</el-dropdown-item>
+                      <el-dropdown-item @click="$router.push('/login')">退出系统</el-dropdown-item>
                     </el-dropdown-menu>
                 </template>
             </el-dropdown>
@@ -22,7 +25,15 @@
 <script>
     export default {
         name: "Header",
-
+      // props: ['user'],
+      // username: JSON.parse(sessionStorage.getItem("user")).username,
+      data() {
+        return {
+          user:{}
+        }
+      },
+      created() {
+      }
     }
 </script>
 
